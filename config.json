@@ -1,9 +1,9 @@
 {
     "api_keys": {
-        "openai": "sk-gkGEbzDTNCMlCpMTwcfki8STagFdl1f-v6SrzAQ2JVT3BlbkFJ7ewl3nrHV9GMJyaWy4reCBTMWvjIbyIwNNnUBIF4sA",
+        "openai": "your_openai_api_key_here",
         "anthropic": "your_anthropic_api_key_here",
         "google": "your_google_api_key_here",
-        "serper": "f5f0adc4b6ebe53f6ee355c83f6ab6ee53ddbbc1"
+        "serper": "your_serper_api_key_here"
     },
     "agent_llms": {
         "job_analyzer": {
