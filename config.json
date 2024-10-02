@@ -1,26 +1,26 @@
 {
     "api_keys": {
-        "openai": "your_openai_api_key_here",
+        "openai": "sk-gkGEbzDTNCMlCpMTwcfki8STagFdl1f-v6SrzAQ2JVT3BlbkFJ7ewl3nrHV9GMJyaWy4reCBTMWvjIbyIwNNnUBIF4sA",
         "anthropic": "your_anthropic_api_key_here",
         "google": "your_google_api_key_here",
-        "serper": "your_serper_api_key_here"
+        "serper": "f5f0adc4b6ebe53f6ee355c83f6ab6ee53ddbbc1"
     },
     "agent_llms": {
         "job_analyzer": {
             "service": "openai",
-            "model": "gpt-4"
+            "model": "gpt-4o-mini"
         },
         "relevance_selector": {
-            "service": "anthropic",
-            "model": "claude-3-opus-20240229"
+            "service": "openai",
+            "model": "gpt-4o-mini"
         },
         "emphasis_strategist": {
-            "service": "google",
-            "model": "gemini-1.5-pro"
+            "service": "openai",
+            "model": "gpt-4o-mini"
         },
         "cover_letter_writer": {
             "service": "openai",
-            "model": "gpt-4-0314"
+            "model": "gpt-4o-mini"
         }
     }
 }
