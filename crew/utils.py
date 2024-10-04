@@ -1,5 +1,7 @@
 import json
 import os
+import re
+import subprocess
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
@@ -44,3 +46,24 @@ def print_llm_assignments(config):
     print("LLM assignments:")
     for agent, llm_config in config['agent_llms'].items():
         print(f"{agent.replace('_', ' ').title()}: {llm_config['service']} - {llm_config['model']}")
+
+def post_process_latex(input_file, output_file):
+    with open(input_file, 'r') as f:
+        content = f.read()
+    
+    # Replace [[ and ]] with nothing (remove tags)
+    content = re.sub(r'\[\[.*?\]\]', '', content)
+    
+    # Replace [ with { and ] with } for LaTeX commands
+    content = re.sub(r'\\(\w+)\[', r'\\\1{', content)
+    content = re.sub(r'\]', '}', content)
+    
+    with open(output_file, 'w') as f:
+        f.write(content)
+
+def compile_latex_to_pdf(latex_file, output_file):
+    try:
+        subprocess.run(['pdflatex', '-output-directory', '.', latex_file], check=True)
+        print(f"PDF generated: {output_file}")
+    except subprocess.CalledProcessError:
+        print("Error: Failed to compile LaTeX to PDF")

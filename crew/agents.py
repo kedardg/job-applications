@@ -47,8 +47,8 @@ def create_agents(resume_path, config):
     )
 
     emphasis_strategist = Agent(
-        role="Emphasis Strategist",
-        goal="Strategically suggest words or phrases to bold, explaining their significance in relation to the job requirements.",
+        role="Latex Resume Strategist",
+        goal="Strategically utilize the created resume and rewrite it in latex format for an exemplary resume.",
         tools=[read_resume, semantic_search_resume, search_tool],
         verbose=True,
         llm=get_llm(config, agent_llms.get('emphasis_strategist', default_llm)),
