@@ -56,11 +56,16 @@ def post_process_latex(content):
     # Remove [[ and ]] tags
     content = re.sub(r'\[\[.*?\]\]', '', content)
     
+    # Replace [ with { and ] with } for LaTeX commands
+    content = re.sub(r'\\(\w+)\[', r'\\\1{', content)
+    content = content.replace(']', '}')
+
     # Replace the lines before \name with the provided lines
-    replacement_text = r"""\documentclass{resume} % Use the custom resume.cls style
+    replacement_text = r"""\documentclass{resume} 
         \usepackage{enumitem}
         \setlist{topsep=-3pt, itemsep=-3pt}
-        \usepackage[left=0.45in ,top=0.4in, right=0.45in ,bottom=0.4in]{geometry} % Document margins
+        \usepackage[left=0.45in ,top=0.4in, right=0.45in ,bottom=0.4in]{geometry} 
+
         \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
         \newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}
         \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
@@ -68,9 +73,7 @@ def post_process_latex(content):
 
     content = re.sub(r'^.*?(?=\\name)', replacement_text, content, flags=re.DOTALL)
     
-    # Replace [ with { and ] with } for LaTeX commands
-    content = re.sub(r'\\(\w+)\[', r'\\\1{', content)
-    content = content.replace(']', '}')
+
     
     return content
 

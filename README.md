@@ -14,8 +14,6 @@ Welcome to the **Job Applications Enhancement Tool** repository. This tool lever
 Follow these steps to set up and use the tool:
 
 ### Prerequisites
-
-
 - Python 3.8 or higher
 - Jupyter Notebook
 
@@ -71,14 +69,6 @@ For advanced document handling, you may want to install Latexmk:
    ```
    pip install -r requirements.txt
    ```
-
-
-- **OpenAI API Account:** You need an OpenAI API key to use certain features of this tool.
-  - Create an account and add credits by following the instructions here: [OpenAI Production Best Practices](https://platform.openai.com/docs/guides/production-best-practices/api-keys).
-
-- **Serper Account:** This tool uses Serper for web scraping and search functionalities.
-  - Sign up at [Serper.dev](https://serper.dev) to get free 2000 queries.
-
 
 ### Prepare Your Resume
 

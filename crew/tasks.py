@@ -27,15 +27,17 @@ def create_tasks(job_analyzer, relevance_selector, emphasis_strategist, cover_le
    
         ),
         expected_output=(
-        "A one-page, tailored resume that aligns with the job requirements. Stay true to the original resume and do not hallucinate. Follow the existing resume format and ensure the following:\n"
-        "1. **Skills Section**: Focus on 10-15 key skills relevant to the job description, but include additional important skills from the existing list to showcase breadth. Follow the original formatting.\n"
-        "2. **Work Experience**: Include upto 4 positions with a total of 8-12 bullet points across all jobs. Use strong action verbs and quantify achievements where possible. Be concise, limiting each bullet point to 30-100 words.\n"
-        "3. **Projects**: Include 2 projects. For each, provide 2 bullet points (30-50 words each) describing results achieved, technologies used, and problems solved. Use the 'Action + Context = Result' (X + Y = Z) formula and quantify results.\n"
-        "4. **Certifications and Education**: List only the most relevant degrees, certifications, or courses that align with the job requirements.\n"
-        "5. **Formatting**: Ensure the resume is ATS-friendly by using simple formatting and avoiding complex layouts or graphics. Maintain consistency in style, formatting, and verb tense throughout the resume.\n"
-        "6. **Keyword Highlighting**: Bold all keywords to help a recruiter quickly analyze the resume.\n"
-        "7. **Customization**: Make enhancements to better match the job description and reflect the company culture or values if known. Tailor the content to focus on the most impactful and relevant information.\n"
-        "8. **Proofreading**: Review the resume for spelling and grammatical errors to maintain professionalism.\n"
+
+            "A one-page, tailored resume that aligns with the job requirements. Stay true to the original resume and do not hallucinate. Follow the existing resume format and ensure the following:\n"
+            "1. **Skills Section**: Focus on 10-15 key skills relevant to the job description, but include additional important skills from the existing list to showcase breadth. Follow the original formatting.\n"
+            "2. **Work Experience**: Include upto 4 positions with a total of 8-12 bullet points across all jobs. Use strong action verbs and quantify achievements where possible. Be concise, limiting each bullet point to 30-100 words.\n"
+            "3. **Projects**: Include 2 projects. For each, provide 2 bullet points (30-50 words each) describing results achieved, technologies used, and problems solved. Use the 'Action + Context = Result' (X + Y = Z) formula and quantify results.\n"
+            "4. **Certifications and Education**: List only the most relevant degrees, certifications, or courses that align with the job requirements.\n"
+            "5. **Formatting**: Ensure the resume is ATS-friendly by using simple formatting and avoiding complex layouts or graphics. Maintain consistency in style, formatting, and verb tense throughout the resume.\n"
+            "6. **Keyword Highlighting**: Bold all keywords to help a recruiter quickly analyze the resume.\n"
+            "7. **Customization**: Make enhancements to better match the job description and reflect the company culture or values if known. Tailor the content to focus on the most impactful and relevant information.\n"
+            "8. **Proofreading**: Review the resume for spelling and grammatical errors to maintain professionalism.\n"
+
         ),
         agent=relevance_selector,
         output_file="resume.md",
@@ -56,7 +58,6 @@ def create_tasks(job_analyzer, relevance_selector, emphasis_strategist, cover_le
         "Include all relevant certifications, courses, and educational qualifications. "
         "Ensure the resume is ATS-friendly by keeping the formatting simple and avoiding complex layouts. "
         "Proofread the final document for spelling and grammatical errors."
-        "Note: In the LaTeX template provided, the '[' and ']' are originally '{' and '}' respectively. Similarly, ':;' and ';:' are '[' and ']'."
         ),
         expected_output=(
             r"""A LaTeX formatted output which has all the details for the generated resume on the following LaTeX format:
@@ -65,10 +66,11 @@ def create_tasks(job_analyzer, relevance_selector, emphasis_strategist, cover_le
             \usepackage[implicit=false][hyperref]
             \usepackage[enumitem]
             \setlist[topsep=-3pt, itemsep=-3pt]
-            \usepackage:;left=0.45in,top=0.4in,right=0.45in,bottom=0.4in;:[geometry]
-            \newcommand[\tab]:;1;:[\hspace[.2667\textwidth]\rlap[#1]]
-            \newcommand[\MYhref]:;3;::;blue;:[\href#2][\color[#1][#3]]]
-            \newcommand[\itab]:;1;:[\hspace[0em]\rlap[#1]]
+            \usepackage[left=0.45in,top=0.4in,right=0.45in,bottom=0.4in][geometry]
+            \newcommand[\tab][1][\hspace[.2667\textwidth]\rlap[#1]]
+            \newcommand[\MYhref][3][blue][\href#2][\color[#1][#3]]]
+            \newcommand[\itab][1][\hspace[0em]\rlap[#1]]
+
 
             \name\Large <<full_name>>
             \address\href[mailto:<<email>>]<<email>> \\ \href[https://www.linkedin.com/in/<<linkedin_profile>>]www.linkedin.com/in/<<linkedin_profile>> \\ 
