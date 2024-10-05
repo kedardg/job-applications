@@ -31,6 +31,34 @@ You need API keys for the following services:
 - **Serper API:** Used for web scraping and search functionalities.
   - Sign up at [Serper.dev](https://serper.dev) to get free 2000 queries.
 
+### LaTeX Distribution (New Requirement)
+
+For PDF generation, you'll need a LaTeX distribution installed on your system:
+
+On Linux:
+* Install TeX Live:
+  ```
+  sudo apt-get install texlive-full
+  ```
+
+On macOS:
+* Install MacTeX from the [MacTeX website](https://www.tug.org/mactex/).
+
+On Windows:
+* Install MiKTeX from the [MiKTeX website](https://miktex.org/download) or TeX Live.
+
+Ensure that LaTeX executables (like `pdflatex`) are in your system's `PATH`.
+
+### Optional: Latexmk
+
+For advanced document handling, you may want to install Latexmk:
+
+- It's included in most LaTeX distributions like TeX Live or MacTeX.
+- On macOS, if not included, you can install via Homebrew:
+  ```
+  brew install latexmk
+  ```
+
 ### Installation
 
 1. Clone this repository:
@@ -38,7 +66,6 @@ You need API keys for the following services:
    git clone https://github.com/yourusername/job-applications-enhancement-tool.git
    cd job-applications-enhancement-tool
    ```
-
 2. Install the required packages:
    ```
    pip install -r requirements.txt
@@ -75,7 +102,6 @@ You need API keys for the following services:
    - Specify the path to your resume and config file.
    - Enter the job posting URL and optional job description.
    - Run the job application process.
-
 3. **Output:** The tool will generate the following files:
    - `focused_resume.md`: An optimized version of your resume.
    - `emphasize_strategy.md`: Suggestions for words or phrases to emphasize.

@@ -56,6 +56,7 @@ def create_tasks(job_analyzer, relevance_selector, emphasis_strategist, cover_le
         "Include all relevant certifications, courses, and educational qualifications. "
         "Ensure the resume is ATS-friendly by keeping the formatting simple and avoiding complex layouts. "
         "Proofread the final document for spelling and grammatical errors."
+        "Note: In the LaTeX template provided, the '[' and ']' are originally '{' and '}' respectively. Similarly, ':;' and ';:' are '[' and ']'."
         ),
         expected_output=(
             r"""A LaTeX formatted output which has all the details for the generated resume on the following LaTeX format:
@@ -64,10 +65,10 @@ def create_tasks(job_analyzer, relevance_selector, emphasis_strategist, cover_le
             \usepackage[implicit=false][hyperref]
             \usepackage[enumitem]
             \setlist[topsep=-3pt, itemsep=-3pt]
-            \usepackage[left=0.45in,top=0.4in,right=0.45in,bottom=0.4in]geometry
-            \newcommand\tab[1]\hspace.2667\textwidth\rlap#1
-            \newcommand\MYhref[3][blue]\href#2\color#1#3
-            \newcommand\itab[1]\hspace0em\rlap#1
+            \usepackage:;left=0.45in,top=0.4in,right=0.45in,bottom=0.4in;:[geometry]
+            \newcommand[\tab]:;1;:[\hspace[.2667\textwidth]\rlap[#1]]
+            \newcommand[\MYhref]:;3;::;blue;:[\href#2][\color[#1][#3]]]
+            \newcommand[\itab]:;1;:[\hspace[0em]\rlap[#1]]
 
             \name\Large <<full_name>>
             \address\href[mailto:<<email>>]<<email>> \\ \href[https://www.linkedin.com/in/<<linkedin_profile>>]www.linkedin.com/in/<<linkedin_profile>> \\ 
