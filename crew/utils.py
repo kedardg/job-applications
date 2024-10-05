@@ -65,6 +65,7 @@ def post_process_latex(content):
         \usepackage{enumitem}
         \setlist{topsep=-3pt, itemsep=-3pt}
         \usepackage[left=0.45in ,top=0.4in, right=0.45in ,bottom=0.4in]{geometry} 
+
         \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
         \newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}
         \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}

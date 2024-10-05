@@ -27,6 +27,7 @@ def create_tasks(job_analyzer, relevance_selector, emphasis_strategist, cover_le
    
         ),
         expected_output=(
+
             "A one-page, tailored resume that aligns with the job requirements. Stay true to the original resume and do not hallucinate. Follow the existing resume format and ensure the following:\n"
             "1. **Skills Section**: Focus on 10-15 key skills relevant to the job description, but include additional important skills from the existing list to showcase breadth. Follow the original formatting.\n"
             "2. **Work Experience**: Include upto 4 positions with a total of 8-12 bullet points across all jobs. Use strong action verbs and quantify achievements where possible. Be concise, limiting each bullet point to 30-100 words.\n"
@@ -36,6 +37,7 @@ def create_tasks(job_analyzer, relevance_selector, emphasis_strategist, cover_le
             "6. **Keyword Highlighting**: Bold all keywords to help a recruiter quickly analyze the resume.\n"
             "7. **Customization**: Make enhancements to better match the job description and reflect the company culture or values if known. Tailor the content to focus on the most impactful and relevant information.\n"
             "8. **Proofreading**: Review the resume for spelling and grammatical errors to maintain professionalism.\n"
+
         ),
         agent=relevance_selector,
         output_file="resume.md",
@@ -68,6 +70,7 @@ def create_tasks(job_analyzer, relevance_selector, emphasis_strategist, cover_le
             \newcommand[\tab][1][\hspace[.2667\textwidth]\rlap[#1]]
             \newcommand[\MYhref][3][blue][\href#2][\color[#1][#3]]]
             \newcommand[\itab][1][\hspace[0em]\rlap[#1]]
+
 
             \name\Large <<full_name>>
             \address\href[mailto:<<email>>]<<email>> \\ \href[https://www.linkedin.com/in/<<linkedin_profile>>]www.linkedin.com/in/<<linkedin_profile>> \\ 

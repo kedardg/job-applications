@@ -14,7 +14,6 @@ Welcome to the **Job Applications Enhancement Tool** repository. This tool lever
 Follow these steps to set up and use the tool:
 
 ### Prerequisites
-
 - Python 3.8 or higher
 - Jupyter Notebook
 
@@ -126,11 +125,3 @@ For advanced document handling, you may want to install Latexmk:
 ## Contributing
 
 Contributions to this project are welcome! Please feel free to fork the repository, make changes, and submit a pull request.
-
-## License
-
-This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
-
-## Contact
-
-If you have any questions or suggestions, please feel free to reach out by creating an issue in this repository.
