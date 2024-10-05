@@ -15,6 +15,7 @@ Follow these steps to set up and use the tool:
 
 ### Prerequisites
 
+
 - Python 3.8 or higher
 - Jupyter Notebook
 
@@ -71,6 +72,14 @@ For advanced document handling, you may want to install Latexmk:
    pip install -r requirements.txt
    ```
 
+
+- **OpenAI API Account:** You need an OpenAI API key to use certain features of this tool.
+  - Create an account and add credits by following the instructions here: [OpenAI Production Best Practices](https://platform.openai.com/docs/guides/production-best-practices/api-keys).
+
+- **Serper Account:** This tool uses Serper for web scraping and search functionalities.
+  - Sign up at [Serper.dev](https://serper.dev) to get free 2000 queries.
+
+
 ### Prepare Your Resume
 
 1. **Create a Super Resume:** Ensure your resume includes all details about your professional history.
@@ -126,11 +135,3 @@ For advanced document handling, you may want to install Latexmk:
 ## Contributing
 
 Contributions to this project are welcome! Please feel free to fork the repository, make changes, and submit a pull request.
-
-## License
-
-This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
-
-## Contact
-
-If you have any questions or suggestions, please feel free to reach out by creating an issue in this repository.
